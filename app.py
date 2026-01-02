@@ -59,3 +59,4 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
+st.image("photo.jpg", width=300)
