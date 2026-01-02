@@ -59,8 +59,9 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
-st.set_page_config(layout="left")           
+           
 st.divider() # ቀጭን መስመር ያስምራል
+st.set_page_config(layout="left")
 st.caption("Set by [Animut Embiale")
 st.caption("College of Engineering and Technology,,Dept of IT,Injibara University ")
 st.caption("© January 2026 | All Rights Reserved")
