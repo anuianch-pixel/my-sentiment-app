@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 
 # 1. የገጹ አቀማመጥ እና ዲዛይን
-st.set_page_config(page_title="የስሜት ትንተና", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="የስሜት ትንተና", page_icon="🧠 ", layout="centered")
 
 # --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
