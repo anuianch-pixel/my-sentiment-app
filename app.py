@@ -59,7 +59,7 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
- st.markdown("---")
+st.markdown("---")
 # አምዶችን በመጠቀም ሊንኮቹን ጎን ለጎን ማድረግ
 col1, col2, col3 = st.columns([1,1,1])
 
