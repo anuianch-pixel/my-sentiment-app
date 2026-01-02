@@ -65,7 +65,7 @@ st.markdown("---")
 
 st.markdown("**Contact Me:**")
     # የቴሌግራም ሊንክ 
-st.markdown("Telegram(https://t.me/Animut_embiale,  Facebook(https://web.facebook.com/Animutanch")
+st.markdown("Telegram: https://t.me/Animut_embiale,  Facebook: https://web.facebook.com/Animutanch")
 st.divider() # ቀጭን መስመር ያስምራል
-st.caption("Set by [Animut Embiale,|College of Engineering and Technology |, |Dept of IT |, Injibara University")
+st.caption("Set by Animut Embiale, College of Engineering and Technology  , Dept of IT , Injibara University")
 st.caption("© January 2026 | All Rights Reserved")
