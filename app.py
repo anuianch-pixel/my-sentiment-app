@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 
 # 1. የገጹ አቀማመጥ እና ዲዛይን
-st.set_page_config(page_title="የስሜት ትንተና",page_icon="", layout="centered")
+st.set_page_config(page_title="የስሜት ትንተና",page_icon="", layout="centered")
 
 # --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
@@ -48,18 +48,27 @@ else:
             # --- ውጤት በውበት (Styling) ማሳያ ---
             if prediction >= 0.5:
                 # ለአዎንታዊ ውጤት አረንጓዴ (Success)
-                st.success(f"### 😊 ውጤት፦ አዎንታዊ (Positive)")
+                st.success(f"### 🤷‍♀️ ውጤት፦ አዎንታዊ (Positive)")
                 st.balloons()
             else:
                 # ለአሉታዊ ውጤት ቀይ (Error)
-                st.error(f"### 😞 ውጤት፦ አሉታዊ (Negative)")
+                st.error(f"### 🤦‍♂️ ውጤት፦ አሉታዊ (Negative)")
 
             # የእርግጠኝነት መጠን (Confidence)
             st.write(f"**የእርግጠኝነት መጠን (Score):** {prediction:.2%}")
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
-           
+ st.markdown("---")
+# አምዶችን በመጠቀም ሊንኮቹን ጎን ለጎን ማድረግ
+col1, col2, col3 = st.columns([1,1,1])
+
+with col2:
+    st.markdown("**Contact Me:**")
+    # የቴሌግራም ሊንክ 
+    st.markdown("[ 🟢Telegram](https://t.me/Animut_embiale")
+    # የሊንክድኢን ሊንክ (ካለህ)
+    st.markdown("[🟩 Facebook](https://web.facebook.com/Animutanch")          
 st.divider() # ቀጭን መስመር ያስምራል
-st.caption("Set by [Animut Embiale,College of Engineering and Technology,,Dept of IT,Injibara University")
+st.caption("Set by [Animut Embiale,|College of Engineering and Technology |, |Dept of IT |, Injibara University")
 st.caption("© January 2026 | All Rights Reserved")
