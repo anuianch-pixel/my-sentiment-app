@@ -59,4 +59,5 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
-st.write(" set by Animut Embiale"),st.image("photo.jpg", width=10)
+st.divider() # ቀጭን መስመር ያስምራል
+st.caption("© 2024 | Set by [አንሙት እምቢያለ፣ እንጅባራ ዩኒቨርሲቲ] | All Rights Reserved")
