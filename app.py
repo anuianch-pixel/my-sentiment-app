@@ -60,4 +60,4 @@ else:
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
 st.divider() # ቀጭን መስመር ያስምራል
-st.caption("© 2024 | Set by [አንሙት እምቢያለ፣ እንጅባራ ዩኒቨርሲቲ] | All Rights Reserved")
+st.caption("© 2025 | Set by [Animut Embiale,College of Engineering and Technology,,Dept of IT,Injibara University] | All Rights Reserved")
