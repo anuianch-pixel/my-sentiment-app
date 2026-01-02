@@ -2,65 +2,60 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
-# 1. የገጹ አቀማመጥ (Professional UI Design)
-st.set_page_config(page_title="Sentiment Analysis", page_icon="🧠", layout="centered")
+# 1. የገጹ አቀማመጥ እና ዲዛይን
+st.set_page_config(page_title="የስሜት ትንተና", page_icon="🧠", layout="centered")
 
-# በጎን በኩል መረጃ ለማሳየት (Sidebar)
+# --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
-    st.title("Settings & Info")
-    st.info("This AI uses a BiLSTM neural network to analyze the sentiment of your text.")
+    st.title("ስለ ፕሮጀክቱ (About)")
+    st.info("ይህ መተግበሪያ የሰው ሰራሽ አስተውሎት (Deep Learning) ቴክኖሎጂን በመጠቀም የተጻፉ ጽሑፎችን ስሜት ይተነትናል።")
     st.markdown("---")
-    st.write("📊 **Model Status:** Ready")
-    st.caption("Developed for Amharic & English text.")
+    st.write("📂 **ፋይሎች:**")
+    st.write("- sentiment_bilstm_model.keras")
+    st.write("- vectorizer.keras")
+    st.caption("በ BiLSTM ሞዴል የተገነባ።")
 
-# ዋናው ርዕስ
+# --- ዋናው ገጽ ---
 st.title("🧠 Sentiment Analysis System")
-st.markdown("Enter your text below to analyze its sentiment (Positive or Negative).")
+st.write("የሚሰማዎትን ወይም ያነበቡትን ጽሑፍ ከታች ባለው ሳጥን ውስጥ ያስገቡ።")
 
-# 2. ሞዴሉን መጫን
+# ሞዴሉን መጫን
 @st.cache_resource
 def load_assets():
     try:
         model = tf.keras.models.load_model("sentiment_bilstm_model.keras")
         vec_model = tf.keras.models.load_model("vectorizer.keras")
         return model, vec_model.layers[0]
-    except:
-        return None, None
+    except Exception as e:
+        return None, str(e)
 
 model, vectorizer = load_assets()
 
 if model is None:
-    st.error("❌ Error: Could not load model files. Please check your GitHub repository.")
+    st.error(f"❌ ሞዴሉን መጫን አልተቻለም፦ {vectorizer}")
 else:
-    # 3. የጽሑፍ ግብዓት (Placeholder ያለ አማርኛ ምሳሌ)
-    user_text = st.text_area("Your Text:", 
-                             placeholder="Type your comment here...",
-                             height=150)
+    # የጽሑፍ ግብዓት
+    user_text = st.text_area("ጽሑፍ እዚህ ይጻፉ:", placeholder="ለምሳሌ፦ ምርቱ በጣም ጥሩ ነው...", height=150)
 
-    if st.button("Analyze Sentiment"):
+    if st.button("ተንትን (Analyze)"):
         if user_text.strip():
-            with st.spinner('Processing...'):
-                vec_text = vectorizer([user_text])
-                prediction = model.predict(vec_text, verbose=0)[0][0]
+            # ትንተና
+            vec_text = vectorizer([user_text])
+            prediction = model.predict(vec_text, verbose=0)[0][0]
 
             st.divider()
 
-            # ውጤት ማሳያ
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                if prediction >= 0.5:
-                    st.success("### 😊 Positive")
-                    st.balloons()
-                else:
-                    st.error("### 😞 Negative")
+            # --- ውጤት በውበት (Styling) ማሳያ ---
+            if prediction >= 0.5:
+                # ለአዎንታዊ ውጤት አረንጓዴ (Success)
+                st.success(f"### 😊 ውጤት፦ አዎንታዊ (Positive)")
+                st.balloons()
+            else:
+                # ለአሉታዊ ውጤት ቀይ (Error)
+                st.error(f"### 😞 ውጤት፦ አሉታዊ (Negative)")
 
-            with col2:
-                st.metric(label="Confidence Score", value=f"{prediction:.2%}")
-                st.progress(float(prediction))
-
+            # የእርግጠኝነት መጠን (Confidence)
+            st.write(f"**የእርግጠኝነት መጠን (Score):** {prediction:.2%}")
+            st.progress(float(prediction))
         else:
-            st.warning("⚠️ Please enter some text first.")
-
-st.markdown("---")
-st.caption("© 2024 AI Sentiment Analyzer")
+            st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
