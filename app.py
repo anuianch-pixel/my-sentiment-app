@@ -59,4 +59,4 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
- st.write(" set by Animut Embiale"),st.image("photo.jpg", width=10)
+st.write(" set by Animut Embiale"),st.image("photo.jpg", width=10)
