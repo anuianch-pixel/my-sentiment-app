@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 
 # 1. የገጹ አቀማመጥ እና ዲዛይን
-st.set_page_config(page_title="የስሜት ትንተና",page_icon="", layout="centered")
+st.set_page_config(page_title="የስሜት ትንተና",page_icon="💚", layout="centered")
 
 # --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
@@ -35,9 +35,9 @@ if model is None:
     st.error(f"❌ ሞዴሉን መጫን አልተቻለም፦ {vectorizer}")
 else:
     # የጽሑፍ ግብዓት
-    user_text = st.text_area("ጽሑፍ እዚህ ይጻፉ:", placeholder="ለምሳሌ፦ ምርቱ በጣም ጥሩ ነው...", height=150)
+    user_text = st.text_area("Please write here(ጽሑፍ እዚህ ይጻፉ):", placeholder="e.g፦ I am happy for the movie...", height=150)
 
-    if st.button("ተንትን (Analyze)"):
+    if st.button(" Analyze(ተንትን)"):
         if user_text.strip():
             # ትንተና
             vec_text = vectorizer([user_text])
@@ -53,12 +53,12 @@ else:
             else:
                 # ለአሉታዊ ውጤት ቀይ (Error)
                 st.error(f"### 🤦‍♂️ ውጤት፦ አሉታዊ (Negative)")
-
+                
             # የእርግጠኝነት መጠን (Confidence)
-            st.write(f"**የእርግጠኝነት መጠን (Score):** {prediction:.2%}")
+            st.write(f"**Confidence Score(የእርግጠኝነት መጠን):** {prediction:.2%}")
             st.progress(float(prediction))
         else:
-            st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
+            st.warning("⚠️ First please write the comment(እባክዎ መጀመሪያ ጽሑፍ ያስገቡ!!!)")
 st.markdown("---")
 # አምዶችን በመጠቀም ሊንኮቹን ጎን ለጎን ማድረግ
 #col1, col2, col3 = st.columns([1,1,1])
