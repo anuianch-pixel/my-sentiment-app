@@ -63,13 +63,12 @@ st.markdown("---")
 # አምዶችን በመጠቀም ሊንኮቹን ጎን ለጎን ማድረግ
 col1, col2, col3 = st.columns([1,1,1])
 
-with col1:
     st.markdown("**Contact Me:**")
     # የቴሌግራም ሊንክ 
     st.markdown("Telegram(https://t.me/Animut_embiale")
     # የሊንክድኢን ሊንክ (ካለህ)
-with col2:
     st.markdown("Facebook(https://web.facebook.com/Animutanch")          
 st.divider() # ቀጭን መስመር ያስምራል
+st.caption("Facebook(https://web.facebook.com/Animutanch")
 st.caption("Set by [Animut Embiale,|College of Engineering and Technology |, |Dept of IT |, Injibara University")
 st.caption("© January 2026 | All Rights Reserved")
