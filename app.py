@@ -3,14 +3,14 @@ import tensorflow as tf
 import numpy as np
 
 # 1. የገጹ አቀማመጥ እና ዲዛይን
-st.set_page_config(page_title="የስሜት ትንተና",page_icon="🧠 ", layout="centered")
+st.set_page_config(page_title="የስሜት ትንተና",page_icon="", layout="centered")
 
 # --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
-    st.title("ስለ ፕሮጀክቱ (About)")
+    st.title(" About Project(ስለ ፕሮጀክቱ)")
     st.info("ይህ መተግበሪያ የሰው ሰራሽ አስተውሎት (Deep Learning) ቴክኖሎጂን በመጠቀም የተጻፉ ጽሑፎችን ስሜት ይተነትናል።")
     st.markdown("---")
-    st.write("📂 **ፋይሎች:**")
+    st.write(" **ፋይሎች:**")
     st.write("- sentiment_bilstm_model.keras")
     st.write("- vectorizer.keras")
     st.caption("በ BiLSTM ሞዴል የተገነባ።")
