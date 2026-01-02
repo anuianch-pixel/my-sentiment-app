@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 
 # 1. የገጹ አቀማመጥ እና ዲዛይን
-st.set_page_config(page_title="የስሜት ትንተና", page_icon="🧠 ", layout="centered")
+st.set_page_config(page_title="የስሜት ትንተና", st.image("photo.jpg", width=10),page_icon="🧠 ", layout="centered")
 
 # --- የጎን ሜኑ (Sidebar) ---
 with st.sidebar:
@@ -59,4 +59,4 @@ else:
             st.progress(float(prediction))
         else:
             st.warning("⚠️ እባክዎ መጀመሪያ ጽሑፍ ያስገቡ።")
-st.image("photo.jpg", width=300)
+
